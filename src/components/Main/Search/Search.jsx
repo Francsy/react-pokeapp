@@ -1,11 +1,13 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import List from './List'
 import axios from 'axios'
+import { pokemonsContext } from "../../../context/pokemonsContext";
 
 const Search = () => {
-  // const [input, setInput] = useState('');
+
   const [search, setSearch] = useState('');
-  const [pokemons, setPokemons] = useState([]);
+  const { pokemons, setNewPokemon } = useContext(pokemonsContext)
+  // const [pokemons, setPokemons] = useState([]);
 
   const inputRef = useRef();
 
@@ -15,10 +17,17 @@ const Search = () => {
         const lowCaseSearch = search.toLowerCase() //Para que la búsqueda siempre sea en minuscula
         if (!pokemons.find(pokemon => pokemon.name === lowCaseSearch)) {
           try {
-            console.log(lowCaseSearch)
             const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${lowCaseSearch}`);
-            const newPokemon = res.data;
-            setPokemons(currentPokemons => [newPokemon, ...currentPokemons])
+            const info = res.data;
+            const newPokemon = {
+              id: info.id,
+              name: info.name,
+              image: info.sprites.other.dream_world.front_default,
+              typeOne: info.types[0].type.name,
+              typeTwo: info.types.length > 1 ? info.types[1].type.name : ''
+            }
+            // setPokemons(currentPokemons => [newPokemon, ...currentPokemons])
+            setNewPokemon(newPokemon)
           } catch (err) {
             alert('That pokemon doesn´t exist!')
           }
@@ -36,8 +45,6 @@ const Search = () => {
   }, [pokemons])
 
   const handleInput = () => setSearch(inputRef.current.value);
-
-
 
   return <div>
     <input type="text" ref={inputRef} value={search} onChange={handleInput} />
