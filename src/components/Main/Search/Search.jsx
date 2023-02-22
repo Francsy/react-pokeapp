@@ -3,7 +3,7 @@ import List from './List'
 import axios from 'axios'
 
 const Search = () => {
-  const [input, setInput] = useState('');
+  // const [input, setInput] = useState('');
   const [search, setSearch] = useState('');
   const [pokemons, setPokemons] = useState([]);
 
@@ -12,42 +12,35 @@ const Search = () => {
   useEffect(() => {
     async function getPokemon() {
       if (search !== '') {
-        try {
-          const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${search}`);
-          const newPokemon = res.data;
-          if (!pokemons.find(pokemon => pokemon.name === newPokemon.name)) {
-            setPokemons(pokemonsData => [newPokemon, ...pokemonsData])
-          } else {
-            alert('You already picked that one!')
+        const lowCaseSearch = search.toLowerCase() //Para que la búsqueda siempre sea en minuscula
+        if (!pokemons.find(pokemon => pokemon.name === lowCaseSearch)) {
+          try {
+            console.log(lowCaseSearch)
+            const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${lowCaseSearch}`);
+            const newPokemon = res.data;
+            setPokemons(currentPokemons => [newPokemon, ...currentPokemons])
+          } catch (err) {
+            alert('That pokemon doesn´t exist!')
           }
-        } catch (err) {
-          alert('That pokemon doesn´t exist!')
         }
       }
     }
-    getPokemon()
+    const timer = setTimeout(getPokemon, 2500) // Otra opción: { debounce } from lodash (Library)
+    return () => clearTimeout(timer); // el useEffect retorna una función que se ejecuta cuando el search se actualiza, con eesto limpiamos el temporizador anteriormente creadoo para que no siga activo
   }, // eslint-disable-next-line 
-  [search]);
+    [search]);
 
- 
-  useEffect(()=>{
-    setInput('')
+
+  useEffect(() => {
+    setSearch('')
   }, [pokemons])
 
-  const handleInput = () => setInput(inputRef.current.value);
+  const handleInput = () => setSearch(inputRef.current.value);
 
-  const handleClick = () => {
-    if (input === '') {
-      return
-    } else {
-      const lowCaseInput = input.toLowerCase() //Para que la búsqueda siempre sea en minuscula
-      lowCaseInput !== search ? setSearch(lowCaseInput) : alert('You already try that search')
-    }
-  }
+
 
   return <div>
-    <input type="text" ref={inputRef} value={input} onChange={handleInput} />
-    <button onClick={handleClick}>Search</button>
+    <input type="text" ref={inputRef} value={search} onChange={handleInput} />
     <List pokemons={pokemons} />
   </div>;
 };
