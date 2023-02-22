@@ -1,7 +1,10 @@
 import React from "react";
+import Nav from './Nav'
 
 const Header = () => {
-  return <div><h1>Pick your Pokemon!!</h1></div>;
+  return <header>
+    <Nav />
+  </header>
 };
 
 export default Header;
