@@ -11,23 +11,24 @@ const Main = () => {
   const inputRef = useRef();
 
   useEffect(() => {
-    async function getPokemon(name) {
-      try {
-        const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
-        const newPokemon = res.data;
-        if (!pokemons.find(pokemon => pokemon.name === newPokemon.name)) {
-          setPokemons(p => [newPokemon, ...p])
-        } else {
-          alert('You already picked that one!')
+    async function getPokemon() {
+      if (search !== '') {
+        try {
+          const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${search}`);
+          const newPokemon = res.data;
+          if (!pokemons.find(pokemon => pokemon.name === newPokemon.name)) {
+            setPokemons(pokemonsData => [newPokemon, ...pokemonsData])
+          } else {
+            alert('You already picked that one!')
+          }
+        } catch (err) {
+          alert('That pokemon doesn´t exist!')
         }
-      } catch (err) {
-        alert('That pokemon doesn´t exist!')
       }
     }
-    if (search !== '') {
-      getPokemon(search);
-    }
-  }, [search]);
+    getPokemon()
+  }, // eslint-disable-next-line 
+  [search]);
 
  
   useEffect(()=>{
