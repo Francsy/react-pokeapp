@@ -19,7 +19,12 @@ const New = () => {
       ...data,
       id: '0'+ data.id, // Añado 0 delante para diferenciarlo de los ids de la api
       name: data.name.toLowerCase(),
-      typeTwo: data.typeTwo !== '' ? data.typeTwo : 'Not second type'
+      typeTwo: data.typeTwo !== '' ? data.typeTwo : 'Not second type',
+      abilities: ['Not available'],
+      moves: ['Not available'],
+      smallImages: ['/assets/small-pokemon.png'],
+      bigImages: ['/assets/secret-pokemon.png'],
+      weight: 'Not available'
     }
     if (!pokemons.some(pokemon => pokemon.name === newPokemon.name || pokemon.id === newPokemon.id)) {
       setNewPokemon(newPokemon)
