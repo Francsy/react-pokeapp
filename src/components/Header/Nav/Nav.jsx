@@ -5,7 +5,7 @@ const Nav = () => {
   return <nav>
     <Link to="/">Home</Link>
     <Link to="/new">Create Pokemon</Link>
-    <Link to="/pokemon">Details</Link>
+    <Link to="/pokemon/25">Details</Link>
     <Link to="/search">Search</Link>
   </nav>;
 };

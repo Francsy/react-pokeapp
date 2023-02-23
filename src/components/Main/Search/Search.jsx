@@ -20,7 +20,7 @@ const Search = () => {
             const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${lowCaseSearch}`);
             const info = res.data;
             const newPokemon = {
-              id: info.id,
+              id: info.id.toString(),
               name: info.name,
               image: info.sprites.other.dream_world.front_default,
               typeOne: info.types[0].type.name,

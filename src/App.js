@@ -20,13 +20,13 @@ function App() {
 
   return (
     <div className="App">
+        <pokemonsContext.Provider value={pokemonsData}>
       <BrowserRouter>
         <Header />
-        <pokemonsContext.Provider value={pokemonsData}>
         <Main />
-        </pokemonsContext.Provider>
       </BrowserRouter>
       <Footer />
+        </pokemonsContext.Provider>
     </div>
   );
 }
