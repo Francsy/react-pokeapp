@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom'
+
 
 const Card = (props) => {
 
@@ -9,7 +11,9 @@ const Card = (props) => {
       (
         <div>
           <img src={props.pokemon.image} alt="" />
+          <Link to={`/pokemon/${props.pokemon.id}?name=${props.pokemon.name}&image=${props.pokemon.image}&typeOne=${props.pokemon.typeOne}&typeTwo=${props.pokemon.typeTwo}&abilities=${JSON.stringify(props.pokemon.abilities)}&moves=${JSON.stringify(props.pokemon.moves)}&smallImages=${JSON.stringify(props.pokemon.smallImages)}&bigImages=${JSON.stringify(props.pokemon.bigImages)}&weight=${props.pokemon.weigth}`}>
           <p>{capPokeName}</p>
+          </Link>
         </div>
       )
   )

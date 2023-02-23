@@ -24,8 +24,8 @@ const Search = () => {
             const info = res.data;
             const abilities = info.abilities.map(ability => ability.ability.name);
             const moves = info.moves.map(move => move.move.name);
-            const smallImg = [info.sprites.front_default, info.sprites.back_default ]
-            const bigImg = [info.sprites.other.home.front_default, info.sprites.other['official-artwork'].front_default]
+            const smallImages = [info.sprites.front_default, info.sprites.back_default ]
+            const bigImages = [info.sprites.other.home.front_default, info.sprites.other['official-artwork'].front_default]
             const newPokemon = {
               id: info.id.toString(),
               name: info.name,
@@ -34,8 +34,9 @@ const Search = () => {
               typeTwo: info.types.length > 1 ? info.types[1].type.name : 'Not second type',
               abilities,
               moves,
-              smallImg,
-              bigImg
+              smallImages,
+              bigImages,
+              weight: info.weight
             }
             // setPokemons(currentPokemons => [newPokemon, ...currentPokemons])
             setNewPokemon(newPokemon)
