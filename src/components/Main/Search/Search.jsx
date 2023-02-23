@@ -22,12 +22,20 @@ const Search = () => {
           try {
             const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${lowCaseSearch}`);
             const info = res.data;
+            const abilities = info.abilities.map(ability => ability.ability.name);
+            const moves = info.moves.map(move => move.move.name);
+            const smallImg = [info.sprites.front_default, info.sprites.back_default ]
+            const bigImg = [info.sprites.other.home.front_default, info.sprites.other['official-artwork'].front_default]
             const newPokemon = {
               id: info.id.toString(),
               name: info.name,
               image: info.sprites.other.dream_world.front_default,
               typeOne: info.types[0].type.name,
-              typeTwo: info.types.length > 1 ? info.types[1].type.name : ''
+              typeTwo: info.types.length > 1 ? info.types[1].type.name : 'Not second type',
+              abilities,
+              moves,
+              smallImg,
+              bigImg
             }
             // setPokemons(currentPokemons => [newPokemon, ...currentPokemons])
             setNewPokemon(newPokemon)

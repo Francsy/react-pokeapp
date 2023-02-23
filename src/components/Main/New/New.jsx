@@ -17,7 +17,9 @@ const New = () => {
   const onSubmit = data => {
     const newPokemon = {
       ...data,
-      name: data.name.toLowerCase()
+      id: '0'+ data.id, // Añado 0 delante para diferenciarlo de los ids de la api
+      name: data.name.toLowerCase(),
+      typeTwo: data.typeTwo !== '' ? data.typeTwo : 'Not second type'
     }
     if (!pokemons.some(pokemon => pokemon.name === newPokemon.name || pokemon.id === newPokemon.id)) {
       setNewPokemon(newPokemon)
