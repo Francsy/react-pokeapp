@@ -21,7 +21,8 @@ const Card = (props) => {
           <Link to={`/pokemon/${props.pokemon.id}?name=${props.pokemon.name}&image=${props.pokemon.image}&typeOne=${props.pokemon.typeOne}&typeTwo=${props.pokemon.typeTwo}&abilities=${JSON.stringify(props.pokemon.abilities)}&moves=${JSON.stringify(props.pokemon.moves)}&smallImages=${JSON.stringify(props.pokemon.smallImages)}&bigImages=${JSON.stringify(props.pokemon.bigImages)}&weight=${props.pokemon.weight}`}>
             <button>More details</button>
           </Link>
-          {isAdded ? <></> : <button onClick={props.add}>Get pokemon!</button>}
+          
+          {props.searchList ? (isAdded ? <button onClick={props.delete}><img src="/assets/close-pokeball.png" alt=""/></button> : <button onClick={props.add}><img src="/assets/open-pokeball.png" alt=""/></button>) : <button onClick={props.delete}><img src="/assets/open-pokeball.png" alt=""/></button>}
           </div>
         </article>
       )

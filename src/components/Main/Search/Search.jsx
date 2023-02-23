@@ -5,17 +5,17 @@ import { pokemonsContext } from "../../../context/pokemonsContext";
 
 const Search = () => {
 
-  const { pokemons, setNewPokemon } = useContext(pokemonsContext)
+  const { pokemons, setNewPokemon, deletePokemon } = useContext(pokemonsContext)
 
   const [search, setSearch] = useState('');
-  const [notFound, setNotFound] = useState(false) 
+  const [notFound, setNotFound] = useState(false)
   const [searchList, setSearchList] = useState([]);
 
   const inputRef = useRef();
 
   useEffect(() => {
     setNotFound(false)
-    let notFoundTimer;    
+    let notFoundTimer;
     async function getPokemon() {
       if (search !== '') {
         const lowCaseSearch = search.toLowerCase() //Para que la búsqueda siempre sea en minuscula
@@ -25,7 +25,7 @@ const Search = () => {
             const info = res.data;
             const abilities = info.abilities.map(ability => ability.ability.name);
             const moves = info.moves.map(move => move.move.name);
-            const smallImages = [info.sprites.front_default, info.sprites.back_default ]
+            const smallImages = [info.sprites.front_default, info.sprites.back_default]
             const bigImages = [info.sprites.other.home.front_default, info.sprites.other['official-artwork'].front_default]
             const newPokemon = {
               id: info.id.toString(),
@@ -42,7 +42,7 @@ const Search = () => {
             setSearchList(currentPokemons => [newPokemon, ...currentPokemons])
           } catch (err) {
             setNotFound(true)
-        
+
           }
         }
       }
@@ -56,28 +56,28 @@ const Search = () => {
   }, // eslint-disable-next-line 
     [search]);
 
-    useEffect(() => {
-      setSearch('')
-    }, [searchList])
+  useEffect(() => {
+    setSearch('')
+  }, [searchList])
 
-    
-  
+
+
 
   const handleInput = () => setSearch(inputRef.current.value);
 
   const addToMain = (newPokemon) => {
     if (!pokemons.find(pokemon => pokemon.name === newPokemon.name)) {
       setNewPokemon(newPokemon)
-  } else {
-    alert('You already added that Pokemon to your list!!')
+    } else {
+      alert('You already added that Pokemon to your list!!')
+    }
   }
 
-}
 
   return <div>
     <input type="text" ref={inputRef} value={search} onChange={handleInput} />
     {notFound ? <p>That Pokemon doesn´t exist!</p> : null}
-    <List pokemons={searchList} add={addToMain} />
+    <List pokemons={searchList} add={addToMain} delete={deletePokemon} searchList={true}/>
   </div>;
 };
 
