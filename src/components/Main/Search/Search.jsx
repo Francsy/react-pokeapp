@@ -6,12 +6,15 @@ import { pokemonsContext } from "../../../context/pokemonsContext";
 const Search = () => {
 
   const [search, setSearch] = useState('');
+  const [notFound, setNotFound] = useState(false) 
   const { pokemons, setNewPokemon } = useContext(pokemonsContext)
   // const [pokemons, setPokemons] = useState([]);
 
   const inputRef = useRef();
 
   useEffect(() => {
+    setNotFound(false)
+    let notFoundTimer;    
     async function getPokemon() {
       if (search !== '') {
         const lowCaseSearch = search.toLowerCase() //Para que la búsqueda siempre sea en minuscula
@@ -29,25 +32,31 @@ const Search = () => {
             // setPokemons(currentPokemons => [newPokemon, ...currentPokemons])
             setNewPokemon(newPokemon)
           } catch (err) {
-            alert('That pokemon doesn´t exist!')
+            setNotFound(true)
+        
           }
         }
       }
     }
     const timer = setTimeout(getPokemon, 2500) // Otra opción: { debounce } from lodash (Library)
-    return () => clearTimeout(timer); // el useEffect retorna una función que se ejecuta cuando el search se actualiza, con eesto limpiamos el temporizador anteriormente creadoo para que no siga activo
+    notFoundTimer = setTimeout(() => setNotFound(false), 2000)
+    return () => {
+      clearTimeout(timer); // el useEffect retorna una función que se ejecuta cuando el search se actualiza, con eesto limpiamos el temporizador anteriormente creadoo para que no siga activo
+      clearTimeout(notFoundTimer)
+    }
   }, // eslint-disable-next-line 
     [search]);
 
-
-  useEffect(() => {
-    setSearch('')
-  }, [pokemons])
+    useEffect(() => {
+      setSearch('')
+    }, [pokemons])
+  
 
   const handleInput = () => setSearch(inputRef.current.value);
 
   return <div>
     <input type="text" ref={inputRef} value={search} onChange={handleInput} />
+    {notFound ? <p>That Pokemon doesn´t exist!</p> : null}
     <List pokemons={pokemons} />
   </div>;
 };
