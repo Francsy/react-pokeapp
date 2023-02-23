@@ -77,7 +77,7 @@ const Search = () => {
   return <div>
     <input type="text" ref={inputRef} value={search} onChange={handleInput} />
     {notFound ? <p>That Pokemon doesn´t exist!</p> : null}
-    <List pokemons={searchList} add={addToMain} delete={deletePokemon} searchList={true}/>
+    <List pokemons={searchList} add={addToMain} delete={deletePokemon} search={true}/>
   </div>;
 };
 

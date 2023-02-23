@@ -22,7 +22,7 @@ const Card = (props) => {
             <button>More details</button>
           </Link>
           
-          {props.searchList ? (isAdded ? <button onClick={props.delete}><img src="/assets/close-pokeball.png" alt=""/></button> : <button onClick={props.add}><img src="/assets/open-pokeball.png" alt=""/></button>) : <button onClick={props.delete}><img src="/assets/open-pokeball.png" alt=""/></button>}
+          {props.search ? (isAdded ? <button onClick={props.delete}><img src="/assets/close-pokeball.png" alt=""/></button> : <button onClick={props.add}><img src="/assets/open-pokeball.png" alt=""/></button>) : <button onClick={props.delete}><img src="/assets/open-pokeball.png" alt=""/></button>}
           </div>
         </article>
       )
