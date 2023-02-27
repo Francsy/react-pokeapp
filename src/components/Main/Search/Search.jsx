@@ -74,11 +74,11 @@ const Search = () => {
   }
 
 
-  return <div>
+  return <section>
     <input type="text" ref={inputRef} value={search} onChange={handleInput} />
     {notFound ? <p>That Pokemon doesn´t exist!</p> : null}
     <List pokemons={searchList} add={addToMain} delete={deletePokemon} search={true}/>
-  </div>;
+  </section>;
 };
 
 export default Search;

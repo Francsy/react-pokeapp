@@ -8,7 +8,7 @@ const BTNav = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand><img src="assets/nav-pokeball.png"
+        <Navbar.Brand><img src="assets/minimal-pokeball.png"
               width="30"
               height="30"
               className="d-inline-block align-top"

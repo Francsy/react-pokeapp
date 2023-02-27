@@ -6,9 +6,9 @@ const List = (props) => {
 
   const printPokemons = () => props.pokemons.map(pokemon => <Card pokemon={pokemon} add={() => props.add(pokemon)} delete={() => props.delete(pokemon)} search={props.search} key={uuidv4()} />)
 
-  return <section>
+  return <div>
     {printPokemons()}
-  </section>;
+  </div>;
 };
 
 export default List;
