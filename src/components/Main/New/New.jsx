@@ -41,23 +41,23 @@ const New = () => {
     <section className="new">
       
       {message ? <article>
-        <Alert variant='dark' dismissible>
+        <Alert variant='dark'>
           You added a new Pokemon!
         </Alert>
-        <img className="professor-oak-img" src="/assets/oak-transparent.png" alt="" srcset="" />
+        <img className="professor-oak-img" src="/assets/oak-transparent.png" alt=""  />
         <img className="pokemon-created-img" src="/assets/pokemon-created.gif" alt="Pokemon created" />
       </article>
         : 
         <>
-        <h1>Create your own Pokemon</h1>
+        <h1>Create your own Pokemon!</h1>
 
 <form onSubmit={handleSubmit(onSubmit)}>
         {errors.id && <span className="error-message">Must be greater than 0:</span>}
         <input type="number" placeholder="ID" {...register("id", { required: true, min: 0 })} className={errors.id ? "error-input" : ""} />
         {errors.name && <span className="error-message">Required and should have more than 3 characters:</span>}
-        <input type="text" placeholder="name" {...register("name", { required: true, minLength: 3 })} className={errors.name ? "error-input" : ""} />
+        <input type="text" placeholder="Name" {...register("name", { required: true, minLength: 3 })} className={errors.name ? "error-input" : ""} />
         {errors.image && <span className="error-message">Required:</span>}
-        <input type="url" placeholder="image" {...register("image", { required: true })} className={errors.image ? "error-input" : ""} />
+        <input type="url" placeholder="Image url" {...register("image", { required: true })} className={errors.image ? "error-input" : ""} />
         {errors.typeOne && <span className="error-message">First type is required:</span>}
         <select {...register("typeOne", { required: true })} className={errors.typeOne ? "error-input" : ""} defaultValue="" >
           <option value="" disabled>First Type</option>
@@ -102,7 +102,7 @@ const New = () => {
           <option value="Developer">Developer</option>
         </select>
         <Button type="submit" className="home-right-button" size='lg' variant="dark">Create!</Button>
-        <img className="professor-oak-img" src="/assets/oak-transparent.png" alt="" srcset="" />
+        <img className="professor-oak-img" src="/assets/oak-transparent.png" alt="" />
       </form>
       </>}
     </section>

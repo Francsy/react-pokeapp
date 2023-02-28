@@ -28,13 +28,13 @@ const Home = () => {
   return <section className="home">
     <img className="home-title-pokemon" src="/assets/pokemon-title-color.png" alt="" />
     {pokemons.length > 0 ? <List pokemons={pokemons} delete={deletePokemon} search={false}/> : 
-    <><article className="home-start-article"><h3>You didn´t add any Pokemon yet!!</h3><div>
+    <><article className="home-start-article"><h3>You didn´t add any pokemon yet!!</h3><div>
 
       <Link to={'/search'}>
       <Button className="home-left-button" size={buttonSize} variant="dark">Get them all!</Button>
       </Link>
       <Link to={'/new'}>
-      <Button className="home-right-button" size={buttonSize} variant="dark">Create Yours!</Button>
+      <Button className="home-right-button" size={buttonSize} variant="dark">Create yours!</Button>
       </Link>
 
     </div></article></>}

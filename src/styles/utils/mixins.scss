@@ -1,0 +1,10 @@
+@mixin bg-title {
+    font-size: 3.5rem;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-shadow: 2px 2px #000;
+    padding: 2rem;
+    border-radius: 10px;
+}

@@ -1,0 +1,36 @@
+@import '../utils/mixins.scss';
+
+.search {
+    
+    padding: 5%;
+     &>h1{
+            @include bg-title;
+            background-image: url('../../../public/assets/get-them-all.png');
+
+        }
+    &>div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 0px;
+        &>input {
+            margin: 20px 0px;
+            padding: 0.5rem;
+            border: 1px solid gray;
+            border-radius: 0.25rem;
+            font-size: 1rem;
+        }
+        &>.search-pokemons-transparent {
+        
+            max-height: 150px;
+            max-width: 95%;
+            bottom: 0; 
+            margin: 100px 40px 40px 40px; 
+    
+        }
+       
+    }
+
+    
+}

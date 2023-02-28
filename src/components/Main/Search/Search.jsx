@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef, useContext } from "react";
 import List from './List'
 import axios from 'axios'
 import { pokemonsContext } from "../../../context/pokemonsContext";
+import Alert from 'react-bootstrap/Alert';
+
 
 const Search = () => {
 
@@ -74,14 +76,25 @@ const Search = () => {
   }
 
 
-  return <section>
-    <input type="text" ref={inputRef} value={search} onChange={handleInput} />
-    {notFound ? <p>That Pokemon doesn´t exist!</p> : null}
+  return <section className="search">
+    <h1>Gotta catch 'em all!</h1>
+    <div>
+    <input type="text" placeholder="Search pokemons!" ref={inputRef} value={search} onChange={handleInput} />
+    {notFound ? <Alert variant='dark'>
+          That Pokemon doesn´t exist!
+        </Alert> : null}
     <List pokemons={searchList} add={addToMain} delete={deletePokemon} search={true}/>
+    <img className="search-pokemons-transparent" src="/assets/pokemons-transparent.png" alt="Some pokemons together"/>
+    </div>
   </section>;
 };
 
 export default Search;
+
+
+
+
+
 
 /* 
 import React, { useEffect, useState, useRef, useContext } from "react";
