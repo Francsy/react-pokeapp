@@ -8,9 +8,8 @@ import Card from 'react-bootstrap/Card';
 const PokeCard = (props) => {
 
   const { pokemons } = useContext(pokemonsContext)
-  
+  const capitalize = word => word.charAt(0).toUpperCase() + word.slice(1);
 
-  const capPokeName = props.pokemon.name ? props.pokemon.name.charAt(0).toUpperCase() + props.pokemon.name.slice(1) : ''; // Para que si hay nombre lo transforme a mayuscula la primera
   const isAdded = pokemons.some(pokemon => pokemon.name === props.pokemon.name)
 
   return (
@@ -20,9 +19,9 @@ const PokeCard = (props) => {
       <Card.Img variant="top" src={props.pokemon.image} />
       </Card.Header>
       <Card.Body  >
-        <Card.Title><strong>#{props.pokemon.id}: Wild {capPokeName} appeared!</strong></Card.Title>
+        <Card.Title><strong>#{props.pokemon.id}: Wild {capitalize(props.pokemon.name)} appeared!</strong></Card.Title>
         
-        <Card.Text>Type: {props.pokemon.typeOne}</Card.Text>
+        <Card.Text>Type: {capitalize(props.pokemon.typeOne)}</Card.Text>
         <Link to={`/pokemon/${props.pokemon.id}?name=${props.pokemon.name}&image=${props.pokemon.image}&typeOne=${props.pokemon.typeOne}&typeTwo=${props.pokemon.typeTwo}&abilities=${JSON.stringify(props.pokemon.abilities)}&moves=${JSON.stringify(props.pokemon.moves)}&smallImages=${JSON.stringify(props.pokemon.smallImages)}&bigImages=${JSON.stringify(props.pokemon.bigImages)}&weight=${props.pokemon.weight}`}>
         <Button className="left-button" variant="dark" size="lg">DETAILS</Button>
         </Link>

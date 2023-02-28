@@ -1,0 +1,70 @@
+@import '../utils/variables.scss';
+
+$font-size: 3rem;
+
+.details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    & h1 {
+        font-size: $font-size;
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+        text-align: center;
+        color: $poke-light;
+        background-color: $poke-blue;
+        padding: 1rem;
+        width: 100%;
+
+        // Utilizamos media queries para ajustar el tamaño y el ancho del título según el ancho de la pantalla
+        @media screen and (min-width: 768px) and (max-width: 1366px) {
+            font-size: $font-size * 1.3;
+
+        }
+
+        @media screen and (min-width: 1366px) {
+            font-size: $font-size * 2;
+
+        }
+    }
+
+    &>.details-img {
+        min-height: 30vh;
+        margin: 5vh 0vh;
+        max-width: 90vw;
+
+        @media screen and (min-width: 768px) and (max-width: 1366px) {
+            height: 50vh;
+        }
+
+        @media screen and (min-width: 1366px) {
+            height: 40vh;
+        }
+    }
+
+    & .details-main-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 100vw;
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+        }
+        
+
+
+        & .details-small {
+            max-height: 100px;
+        }
+
+        .details-large {
+            max-width: 90vw;
+        }
+
+
+    }
+
+
+
+}

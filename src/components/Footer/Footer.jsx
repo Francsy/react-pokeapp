@@ -1,7 +1,7 @@
 import React from "react";
 
 const Footer = () => {
-  return <div><p>Pokemon picker footer</p></div>;
+  return <div><p>Created by <a href="https://github.com/Francsy">Francsy</a></p></div>;
 };
 
 export default Footer;
