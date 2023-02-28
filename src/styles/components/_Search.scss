@@ -3,12 +3,12 @@
 .search {
     
     padding: 5%;
-     &>h1{
+     &>.title-get-all {
             @include bg-title;
             background-image: url('../../../public/assets/get-them-all.png');
 
         }
-    &>div {
+    &>.searcher-div {
         display: flex;
         flex-direction: column;
         justify-content: center;

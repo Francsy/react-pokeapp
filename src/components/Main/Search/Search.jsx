@@ -77,14 +77,14 @@ const Search = () => {
 
 
   return <section className="search">
-    <h1>Gotta catch 'em all!</h1>
-    <div>
-    <input type="text" placeholder="Search pokemons!" ref={inputRef} value={search} onChange={handleInput} />
-    {notFound ? <Alert variant='dark'>
-          That Pokemon doesn´t exist!
-        </Alert> : null}
-    <List pokemons={searchList} add={addToMain} delete={deletePokemon} search={true}/>
-    <img className="search-pokemons-transparent" src="/assets/pokemons-transparent.png" alt="Some pokemons together"/>
+    <h1 className="title-get-all">Gotta catch 'em all!</h1>
+    <div className="searcher-div">
+      <input type="text" placeholder="Search pokemons!" ref={inputRef} value={search} onChange={handleInput} />
+      {notFound ? <Alert variant='dark'>
+        That Pokemon doesn´t exist!
+      </Alert> : null}
+      <List pokemons={searchList} add={addToMain} delete={deletePokemon} search={true} />
+      <img className="search-pokemons-transparent" src="/assets/pokemons-transparent.png" alt="Some pokemons together" />
     </div>
   </section>;
 };
