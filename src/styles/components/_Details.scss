@@ -18,7 +18,6 @@ $font-size: 3rem;
         padding: 1rem;
         width: 100%;
 
-        // Utilizamos media queries para ajustar el tamaño y el ancho del título según el ancho de la pantalla
         @media screen and (min-width: 768px) and (max-width: 1366px) {
             font-size: $font-size * 1.3;
 
@@ -35,13 +34,10 @@ $font-size: 3rem;
         margin: 5vh 0vh;
         max-width: 90vw;
 
-        @media screen and (min-width: 768px) and (max-width: 1366px) {
-            height: 50vh;
-        }
-
-        @media screen and (min-width: 1366px) {
+        @media screen and (min-width: 768px) {
             height: 40vh;
         }
+
     }
 
     & .details-main-container {

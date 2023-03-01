@@ -1,0 +1,19 @@
+
+
+.carousel-image {
+    max-height: 300px;
+    width: auto;
+    margin-bottom: 20px;
+}
+
+.poke-card {
+    align-self: center;
+    justify-self: center;
+    margin-bottom: 100px;
+    &> div {
+        display: inline;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
