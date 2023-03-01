@@ -1,8 +1,8 @@
-# REACT NYT APP
+# REACT POKE APP
 
 Do you like Pokemons?? Prepared yourself to get them all!! 
 
-This is a React application built with function components. It incorporates features such as context communication, props, useEffect, debounce without hooks, validation, routing, and passing information through link params.
+This is a React application built with function components. It incorporates features such as context communication, props, useEffect, debounce, validation, routing and passing information through link params.
 
 <br>
 
@@ -45,6 +45,8 @@ This React application has the following main features:
 
 - `Component lifecycle methods (useEffect)`: React's component lifecycle methods are used to manage the state of the application and handle events. The useEffect hook allows to manage side effects and update the state of the application when it´s needed.
 
+- `Api request`: Using axios and the [PokeApi](https://pokeapi.co/).
+
 - `Routing and passing information through links`: React Router is used to handle navigation between pages and passing information through link params when a more detailed view of a pokemon is rendered.
 
 - `SCSS styles`: Styling is done using SCSS modules and some Bootstrap elements. Variables, mixins and all the power of sass structure is used on this mobile first app.
@@ -55,8 +57,10 @@ With these features, this application provides users with a seamless and efficie
 
 
 <br>
-<img src="./public/assets/pikachu.png" alt="Pikachu">
-<img src="./public/assets/new-view.png" alt="Pikachu">
+<div>
+<img src="./public/assets/pikachu.png" alt="Pikachu" style="display:inline-block; width:45%">
+<img src="./public/assets/new-view.png" alt="Pikachu" style="display:inline-block; width:45%">
+<div>
 
 
 ## Usage:
