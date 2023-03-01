@@ -1,0 +1,45 @@
+@import '../utils/mixins.scss';
+
+.search {
+    
+    padding: 5%;
+     &>.title-get-all {
+            @include bg-title;
+            background-image: url('../assets/get-them-all.png');
+
+        }
+    &>.searcher-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 0px;
+        @media screen and (min-width: 1366px) {
+            
+
+        } 
+        &>input {
+            margin: 20px 0px;
+            padding: 0.5rem;
+            border: 1px solid gray;
+            border-radius: 0.25rem;
+            font-size: 1rem;
+        }
+        &>.search-pokemons-transparent {
+        
+            max-height: 150px;
+            max-width: 95%;
+            bottom: 0; 
+            margin: 200px 40px 40px 40px;
+            @media screen and (min-width: 1366px) {
+                max-height: 200px;
+                margin-bottom: 0px;
+    
+            } 
+    
+        }
+       
+    }
+
+    
+}

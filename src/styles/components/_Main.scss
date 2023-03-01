@@ -1,0 +1,14 @@
+@import '../utils/variables.scss';
+
+
+.main {
+    background-color: $poke-light;
+    min-height: 80vh;
+
+    @media screen and (min-width: 768px) and (max-width: 1200px) {
+        min-height: 78vh;
+    }
+    @media screen and (min-width: 1200px) {
+        min-height: 77vh;    
+    }
+}
