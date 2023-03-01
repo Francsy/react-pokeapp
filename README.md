@@ -97,11 +97,15 @@ To use the application, follow these steps:
 - Get back and try to Create a new Pokemon. 
 - Take a cofee and go to the footer to enjoy lofi music.
 
+Contributions are always welcome! If you have any ideas, suggestions, or find any issues, please don't hesitate to open an issue or submit a pull request. Your feedback and contributions will help make this project better and more useful for everyone. Thank you for using and supporting this project!
+
 
 <br>
+
 
 ## Author:
 
 <br>
 
 [Fran V. Hernández](https://github.com/Francsy/)
+
