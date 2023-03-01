@@ -86,7 +86,8 @@ With these features, this application provides users with a seamless and efficie
 <img src="./public/assets/detailed-view.png" alt="Pikachu">
 
 <br>
-The Poke App also includes some featuress like a fully responsive nav, some effects and also music (go to the footer and take the Pokeflute).
+
+The Poke App also includes some featuress like a fully responsive nav, some effects and also music (go to the footer and play the Pokeflute).
 
 To use the application, follow these steps:
 
