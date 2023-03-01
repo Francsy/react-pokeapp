@@ -1,8 +1,9 @@
 import React from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation, Link } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid'
 import ListGroup from 'react-bootstrap/ListGroup';
 import { ListGroupItem } from "react-bootstrap";
+import Button from 'react-bootstrap/Button';
 
 
 const Details = () => {
@@ -37,11 +38,17 @@ const Details = () => {
   const printMoves = () => moves.map(move => <ListGroup.Item key={uuidv4()} >{capitalize(move)}.</ListGroup.Item>)
 
   return <section className="details">
+        <div className="container-title">
+        <Link to="/">
+      <Button variant="dark" size="lg">&lt; Back</Button>    
+        </Link>
     <h1>#{id}: {capitalize(name)}</h1>
+      </div>
     <img className="details-img" src={image} alt="" />
     <div className="details-main-container">
       <article>
         <ListGroup>
+
           <ListGroupItem key={uuidv4()} ><strong>NUMBER:</strong></ListGroupItem>
           <ListGroupItem key={uuidv4()}>{id}</ListGroupItem>
           <ListGroupItem key={uuidv4()}><strong>NAME:</strong></ListGroupItem>
@@ -69,6 +76,7 @@ const Details = () => {
         <ListGroup>
           <ListGroup.Item key={uuidv4()}><strong>MOVES:</strong></ListGroup.Item>
           {printMoves()}
+
         </ListGroup>
 
       </article>

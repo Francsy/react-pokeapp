@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect }from "react";
 
 import { pokemonsContext } from "../../../context/pokemonsContext";
-import Carousel from "./Carousel";
+import PokeCarousel from './PokeCarousel'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 
@@ -28,7 +28,7 @@ const Home = () => {
   return <section className="home">
     <img className="home-title-pokemon" src="/assets/pokemon-title-color.png" alt="" />
     {pokemons.length > 0 ? 
-    <Carousel pokemons={pokemons} delete={deletePokemon} search={false}/> 
+    <PokeCarousel pokemons={pokemons} delete={deletePokemon} search={false}/> 
     : <><article className="home-start-article"><h3>You didn´t add any pokemon yet!!</h3><div>
 
       <Link to={'/search'}>
@@ -37,8 +37,8 @@ const Home = () => {
       <Link to={'/new'}>
       <Button className="home-right-button" size={buttonSize} variant="dark">Create yours!</Button>
       </Link>
-
     </div></article></>}
+
   </section>;
 };
 

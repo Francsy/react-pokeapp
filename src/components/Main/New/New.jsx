@@ -9,6 +9,7 @@ const New = () => {
   const { pokemons, setNewPokemon } = useContext(pokemonsContext)
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [message, setMessage] = useState(false)
+  const [errPokemon, setErrPokemon] = useState(false)
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -16,6 +17,12 @@ const New = () => {
     }, 2900);
     return () => clearTimeout(timer);
   }, [pokemons]);
+
+  const handeRepeatedPokemon = () => {
+    setErrPokemon(true)
+    setTimeout(() => setErrPokemon(false), 3000);
+  }
+  
 
   const onSubmit = data => {
     const newPokemon = {
@@ -33,9 +40,10 @@ const New = () => {
       setNewPokemon(newPokemon)
       setMessage(true)
     } else {
-      alert('Your new Pokemon is already on the list')
+      handeRepeatedPokemon()    
     }
   }
+
 
   return (
     <section className="new">
@@ -102,7 +110,11 @@ const New = () => {
           <option value="Developer">Developer</option>
         </select>
         <Button type="submit" className="home-right-button" size='lg' variant="dark">Create!</Button>
-        <img className="professor-oak-img" src="/assets/oak-transparent.png" alt="" />
+        {errPokemon ? 
+        <Alert variant='dark'>
+          Your new Pokemon is already on the list!
+        </Alert> : <></>}
+        <img className="professor-oak-img" src="/assets/oak-transparent.png" alt=""  />
       </form>
       </>}
     </section>

@@ -22,6 +22,7 @@ const BTNav = () => {
             <NavLink className="nav-link" to="/search">Get them all!</NavLink>
           </Nav>
           <Nav>
+            
           <NavLink className="nav-link" to="/"><img src="/assets/pokemon-title-nav.png" width="140"
               height="44"
               className="d-inline-block align-top"

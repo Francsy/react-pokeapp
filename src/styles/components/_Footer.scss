@@ -1,22 +1,55 @@
 @import '../utils/variables.scss';
 
+
 footer {
     background-color: $poke-dark;
     width: 100vw;
+
     &>.footer-img {
         max-width: 100vw;
         height: auto;
-    
+        display: none;
+        @media screen and (min-width: 1200px) {
+            display: block;
+        }
+
     }
-    &> h4 {
+
+    &>button {
+        margin-top: 30px;
+        min-width: 30vw;
+        min-height: 70px;
+
+        & img {
+            max-height: 40px;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1200px) {
+            min-width: 15vw;
+        }
+
+        @media screen and (min-width: 1200px) {
+            min-width: 8vw;
+            min-height: 50px;
+            & img {
+                max-height: 35px;
+            }
+        }
+
+    }
+
+    &>h4 {
         color: $poke-light;
         margin: 0px;
         text-decoration: none;
         padding: 20px 10px;
+
         &>a {
             color: $poke-light;
             text-decoration: none;
+
+            &:hover {
+                color: $poke-blue;
+            }
         }
     }
-} 
-
+}
