@@ -16,7 +16,7 @@ const PokeCarousel = (props) => {
         alt=""
       />
       <div className="poke-card">
-        <h1><strong>#{pokemon.id}: {capitalize(pokemon.name)}</strong></h1>
+        <h1><strong>#{pokemon.id} {capitalize(pokemon.name)}</strong></h1>
         <h2>Type: {capitalize(pokemon.typeOne)}</h2>
         <div className="poke-card-buttons">
         <Link to={`/pokemon/${pokemon.id}?name=${pokemon.name}&image=${pokemon.image}&typeOne=${pokemon.typeOne}&typeTwo=${pokemon.typeTwo}&abilities=${JSON.stringify(pokemon.abilities)}&moves=${JSON.stringify(pokemon.moves)}&smallImages=${JSON.stringify(pokemon.smallImages)}&bigImages=${JSON.stringify(pokemon.bigImages)}&weight=${pokemon.weight}`}>

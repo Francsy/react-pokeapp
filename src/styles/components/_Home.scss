@@ -17,6 +17,15 @@
         border-radius: 10px;
         background: $poke-blue;
         box-shadow:  21px 21px 55px #5a5a5a, -21px -21px 55px #ffffff;
+        // @media screen and (min-width: 768px) and (max-width: 1366px) {
+        //     margin
+
+        // }
+
+        @media screen and (min-width: 1366px) {
+            margin: 70px 25%;
+
+        }
         &> h3{
             color: $poke-light;
       

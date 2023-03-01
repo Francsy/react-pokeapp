@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect }from "react";
 
 import { pokemonsContext } from "../../../context/pokemonsContext";
-import List from "../Search/List";
 import Carousel from "./Carousel";
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';

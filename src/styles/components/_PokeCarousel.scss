@@ -10,7 +10,14 @@
     align-self: center;
     justify-self: center;
     margin-bottom: 100px;
-    &> div {
+    &>h1 {
+        margin-top: 40px;
+    }
+    &>h2 {
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+    &>div {
         display: inline;
         flex-direction: row;
         justify-content: center;
