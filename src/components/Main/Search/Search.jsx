@@ -59,8 +59,6 @@ const Search = () => {
               } else {
                 encounterMusic = new Audio(superPika)
               }
-
-              
             } else {
               encounterMusic = new Audio(encounter)
             }
@@ -73,7 +71,6 @@ const Search = () => {
               easterEgg.play()
             }
             setNotFound(true)
-
           }
         }
       }

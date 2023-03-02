@@ -19,7 +19,7 @@ const PokeCard = (props) => {
           <Card.Img variant="top" src={props.pokemon.image} />
         </Card.Header>
         <Card.Body  >
-          <Card.Title><strong>#{props.pokemon.id}: Wild {capitalize(props.pokemon.name)} appeared!</strong></Card.Title>
+          <Card.Title><strong>#{props.pokemon.id}: {isAdded ? `${capitalize(props.pokemon.name)} was caught!` : `Wild ${capitalize(props.pokemon.name)} appeared!`}</strong></Card.Title>
 
           <Card.Text>Type: {capitalize(props.pokemon.typeOne)}</Card.Text>
           <Link to={`/pokemon/${props.pokemon.id}?name=${props.pokemon.name}&image=${props.pokemon.image}&typeOne=${props.pokemon.typeOne}&typeTwo=${props.pokemon.typeTwo}&abilities=${JSON.stringify(props.pokemon.abilities)}&moves=${JSON.stringify(props.pokemon.moves)}&smallImages=${JSON.stringify(props.pokemon.smallImages)}&bigImages=${JSON.stringify(props.pokemon.bigImages)}&weight=${props.pokemon.weight}`}>
