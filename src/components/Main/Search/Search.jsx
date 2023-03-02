@@ -40,7 +40,7 @@ const Search = () => {
             const newPokemon = {
               id: info.id.toString(),
               name: info.name,
-              image: info.sprites.other.dream_world.front_default,
+              image: info.sprites.other.dream_world.front_default || '/assets/small-pokemon.png',
               typeOne: info.types[0].type.name,
               typeTwo: info.types.length > 1 ? info.types[1].type.name : 'Not second type',
               abilities,
