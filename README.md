@@ -58,8 +58,8 @@ With these features, this application provides users with a seamless and efficie
 
 <br>
 <div>
-<img src="./public/assets/pikachu.png" alt="Pikachu" style="display:inline-block; width:45%">
-<img src="./public/assets/new-view.png" alt="Pikachu" style="display:inline-block; width:45%">
+<img src="./public/assets/mobile-home.png" alt="Pikachu" style="display:inline-block; width:45%">
+<img src="./public/assets/mobile-new.png" alt="Pikachu" style="display:inline-block; width:45%">
 <div>
 
 
