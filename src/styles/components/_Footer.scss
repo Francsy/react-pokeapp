@@ -48,9 +48,16 @@ footer {
         &>a {
             color: $poke-light;
             text-decoration: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
 
             &:hover {
                 color: $poke-blue;
+            }
+            img {
+                max-height: 20px;
             }
         }
     }
