@@ -19,7 +19,7 @@ const Footer = () => {
         setWantMusic(false);
       });
     }
-    return () => {
+    return () => { // This return cleans previous effects
       if (song) {
         song.removeEventListener('ended', () => {
           setWantMusic(false);

@@ -17,9 +17,12 @@
         background: $poke-blue;
         box-shadow:  21px 21px 55px #5a5a5a, -21px -21px 55px #ffffff;
         
+        @media screen and (min-width: 768px) and (max-width: 1000px) {
+            margin: 30px 20%;
+        }
 
-        @media screen and (min-width: 1366px) {
-            margin: 70px 25%;
+        @media screen and (min-width: 1000px) {
+            margin: 50px 25%;
 
         }
         &> h3{
@@ -36,17 +39,19 @@
             & .home-right-button {
                 border-radius: 0px 10px 10px 0px;
             }
+            button {
+                font-size: 1.2rem;
+                
+                @media screen and (min-width: 1000px) {
+                    font-size: 1.3rem;                
+        
+                }
+            }
                 
         }
     }
 
 }
-
-// .home-start-article {
-//     margin-top: 1000px;
-//         display: flex;
-//         flex-direction: row;
-// }
 
 
 

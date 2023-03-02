@@ -5,8 +5,6 @@ import PokeCarousel from './PokeCarousel'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 
-
-
 const Home = () => {
   const { pokemons, deletePokemon } = useContext(pokemonsContext)
   const [buttonSize, setButtonSize] = useState('')
@@ -28,7 +26,7 @@ const Home = () => {
   return <section className="home">
     <img className="home-title-pokemon" src="/assets/pokemon-title-color.png" alt="" />
     {pokemons.length > 0 ? 
-    <PokeCarousel pokemons={pokemons} delete={deletePokemon} search={false}/> 
+    <PokeCarousel pokemons={pokemons} delete={deletePokemon} /> 
     : <><article className="home-start-article"><h3>You didn´t add any pokemon yet!!</h3><div>
 
       <Link to={'/search'}>
@@ -38,7 +36,6 @@ const Home = () => {
       <Button className="home-right-button" size={buttonSize} variant="dark">Create yours!</Button>
       </Link>
     </div></article></>}
-
   </section>;
 };
 

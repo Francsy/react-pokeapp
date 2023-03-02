@@ -1,0 +1,21 @@
+.poke-nav {
+    min-height: 10vh;
+   
+
+    & > div> div> div> a {
+        font-size: 1.4rem;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1000px) {
+        & > div> div> div> a {
+            font-size: 1.1rem;
+        }
+            
+    }
+
+    @media screen and (min-width: 1000px) {
+        & > div> div> div> a {
+            font-size: 1.1rem;
+        }
+    }
+
+}
