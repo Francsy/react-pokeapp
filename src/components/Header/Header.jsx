@@ -1,9 +1,9 @@
 import React from "react";
-import Nav from './Nav'
+import PokeNav from './PokeNav'
 
 const Header = () => {
   return <header>
-    <Nav />
+    <PokeNav />
   </header>
 };
 
