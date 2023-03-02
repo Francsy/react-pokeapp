@@ -4,6 +4,14 @@ import axios from 'axios'
 import { pokemonsContext } from "../../../context/pokemonsContext";
 import Alert from 'react-bootstrap/Alert';
 
+import specialAudio from '../../../styles/assets/missing0.mp3'
+import encounter from '../../../styles/assets/encounter.mp3'
+import ghost from '../../../styles/assets/ghost.mp3'
+import superPika from '../../../styles/assets/superpika.mp3'
+import pika from '../../../styles/assets/pika.mp3'
+
+
+
 
 const Search = () => {
 
@@ -41,8 +49,29 @@ const Search = () => {
               bigImages,
               weight: info.weight
             }
+            let encounterMusic;
+            if (newPokemon.typeOne === 'ghost') {
+              encounterMusic = new Audio(ghost)
+            } else if (newPokemon.name === 'pikachu') {
+              const random = Math.random();
+              if (random < 0.5) {
+                encounterMusic = new Audio(pika)
+              } else {
+                encounterMusic = new Audio(superPika)
+              }
+
+              
+            } else {
+              encounterMusic = new Audio(encounter)
+            }
+            encounterMusic.play();
             setSearchList(currentPokemons => [newPokemon, ...currentPokemons])
+
           } catch (err) {
+            if (lowCaseSearch.includes('missingno')) {
+              const easterEgg = new Audio(specialAudio)
+              easterEgg.play()
+            }
             setNotFound(true)
 
           }
