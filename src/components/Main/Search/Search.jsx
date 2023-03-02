@@ -29,7 +29,7 @@ const Search = () => {
     async function getPokemon() {
       if (search !== '') {
         const lowCaseSearch = search.toLowerCase() //Para que la búsqueda siempre sea en minuscula
-        if (!searchList.find(pokemon => pokemon.name === lowCaseSearch)) {
+        if (!searchList.find(pokemon => pokemon.name === lowCaseSearch || pokemon.id === lowCaseSearch)) {
           try {
             const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${lowCaseSearch}`);
             const info = res.data;
