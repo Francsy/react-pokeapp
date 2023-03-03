@@ -43,8 +43,6 @@ $font-size: 3rem;
         }
     }
 
-
-
     &>.details-img {
         min-height: 30vh;
         margin: 5vh 0vh;
@@ -53,7 +51,6 @@ $font-size: 3rem;
         @media screen and (min-width: 768px) {
             height: 40vh;
         }
-
     }
 
     & .details-main-container {
@@ -63,9 +60,8 @@ $font-size: 3rem;
 
         @media screen and (min-width: 768px) {
             flex-direction: row;
+            margin-bottom: 30px;
         }
-
-
 
         & .details-small {
             max-height: 100px;
@@ -73,11 +69,9 @@ $font-size: 3rem;
 
         .details-large {
             max-width: 90vw;
+            @media screen and (min-width: 768px) {
+                max-width: 50vw;
+            }
         }
-
-
     }
-
-
-
 }

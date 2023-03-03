@@ -1,30 +1,19 @@
-import React from "react";
-import Card from './Card'
+import React, {Suspense, lazy} from "react";
+
 import { v4 as uuidv4 } from 'uuid'
+const PokeCard =  lazy(() => import('./PokeCard'))
 
 const List = (props) => {
 
-  const printPokemons = () => props.pokemons.map(pokemon => <Card pokemon={pokemon} add={() => props.add(pokemon)} delete={() => props.delete(pokemon)} search={props.search} key={uuidv4()} />)
+  const printPokemons = () => props.pokemons.map(pokemon =>  <Suspense fallback={<div><img src="/assets/loading.gif" alt="Loading..." /></div>}><PokeCard pokemon={pokemon} add={() => props.add(pokemon)} delete={() => props.delete(pokemon)} key={uuidv4()} /> </Suspense>)
 
   return <div>
+         
     {printPokemons()}
+        
+         
   </div>;
+
 };
 
 export default List;
-
-
-// import React from "react";
-// import Card from './Card'
-// import { v4 as uuidv4 } from 'uuid'
-
-// const List = (props) => {
-
-//   const printPokemons = () => props.pokemons.map(pokemon => <Card pokemon={pokemon} key={uuidv4()} />)
-
-//   return <section>
-//     {printPokemons()}
-//   </section>;
-// };
-
-// export default List;

@@ -6,9 +6,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { useState } from 'react'
 import { pokemonsContext } from './context/pokemonsContext'
 
-
 function App() {
-  
+
   const [pokemons, setPokemons] = useState([])
   const setNewPokemon = (newPokemon) => setPokemons([newPokemon, ...pokemons])
   const deletePokemon = (pokemon) => {
@@ -21,7 +20,6 @@ function App() {
     setNewPokemon,
     deletePokemon
   }
-
 
   return (
     <div className="App">
