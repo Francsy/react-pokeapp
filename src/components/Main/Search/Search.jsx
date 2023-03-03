@@ -49,20 +49,7 @@ const Search = () => {
               bigImages,
               weight: info.weight
             }
-            let encounterMusic;
-            if (newPokemon.typeOne === 'ghost') {
-              encounterMusic = new Audio(ghost)
-            } else if (newPokemon.name === 'pikachu') {
-              const random = Math.random();
-              if (random < 0.5) {
-                encounterMusic = new Audio(pika)
-              } else {
-                encounterMusic = new Audio(superPika)
-              }
-            } else {
-              encounterMusic = new Audio(encounter)
-            }
-            encounterMusic.play();
+            handleSounds(newPokemon)
             setSearchList(currentPokemons => [newPokemon, ...currentPokemons])
 
           } catch (err) {
@@ -89,7 +76,22 @@ const Search = () => {
   }, [searchList])
 
 
-
+  const handleSounds = (newPokemon) => {
+    let encounterMusic;
+    if (newPokemon.typeOne === 'ghost') {
+      encounterMusic = new Audio(ghost)
+    } else if (newPokemon.name === 'pikachu' || newPokemon.id === '25') {
+      const random = Math.random();
+      if (random < 0.5) {
+        encounterMusic = new Audio(pika)
+      } else {
+        encounterMusic = new Audio(superPika)
+      }
+    } else {
+      encounterMusic = new Audio(encounter)
+    }
+    encounterMusic.play()
+  }
 
   const handleInput = () => setSearch(inputRef.current.value);
 
@@ -100,7 +102,6 @@ const Search = () => {
       alert('You already added that Pokemon to your list!!')
     }
   }
-
 
   return <section className="search">
     <h1 className="title-get-all">Gotta catch 'em all!</h1>
