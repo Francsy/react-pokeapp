@@ -62,10 +62,10 @@ const Search = () => {
         }
       }
     }
-    const timer = setTimeout(getPokemon, 2500) // Otra opción: { debounce } from lodash (Library)
+    const timer = setTimeout(getPokemon, 1600) 
     notFoundTimer = setTimeout(() => setNotFound(false), 2000)
     return () => {
-      clearTimeout(timer); // el useEffect retorna una función que se ejecuta cuando el search se actualiza, con eesto limpiamos el temporizador anteriormente creadoo para que no siga activo
+      clearTimeout(timer); // 
       clearTimeout(notFoundTimer)
     }
   }, // eslint-disable-next-line 
@@ -106,7 +106,7 @@ const Search = () => {
   return <section className="search">
     <h1 className="title-get-all">Gotta catch 'em all!</h1>
     <div className="searcher-div">
-      <div>
+      <div className="input-div">
       <input className="search-input" type="text" placeholder="Search pokemons!" ref={inputRef} value={search} onChange={handleInput} />
       {search ? <img className="mini-loading" src="/assets/mini-loading.webp" alt="loading"/> : <></>}
       </div>
