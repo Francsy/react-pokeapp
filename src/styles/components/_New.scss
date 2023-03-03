@@ -27,7 +27,16 @@
             padding: 0.5rem;
             border: 1px solid gray;
             border-radius: 0.25rem;
-            font-size: 1rem;
+            font-size: 1.1rem;
+            min-width: 60vw;
+            @media screen and (min-width: 768px) and (max-width: 1000px) {
+                font-size: 1.3rem;
+                min-width: 50vw;
+            }
+            @media screen and (min-width: 1000px) {
+                font-size: 1.2rem;
+                min-width: 40vw;
+            }
 
             &.error-input {
                 border-color: red;
@@ -45,20 +54,16 @@
             -webkit-appearance: none;
             appearance: none;
         }
-
-
     }
 
     article {
         display: flex;
         flex-direction: column;
         align-items: center;
-
         p {
             font-size: 1.25rem;
             margin-bottom: 1rem;
         }
-
         .pokemon-created-img {
             margin-bottom: 30px;
             max-width: 100%;
@@ -70,7 +75,6 @@
             @media screen and (min-width: 1000px) {
                 max-width: 45%;    
             }
-        
         }
     }
     .professor-oak-img {

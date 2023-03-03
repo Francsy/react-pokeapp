@@ -1,9 +1,10 @@
 @import '../utils/variables.scss';
 
-
 .main {
+    margin-top: 10vh;
+    
     background-color: $poke-light;
-    min-height: 70vh;
+    min-height: 80vh;
     .poke-loader {
         max-width: 100vw;
     }
