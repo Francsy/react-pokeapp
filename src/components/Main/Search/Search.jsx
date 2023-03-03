@@ -4,11 +4,11 @@ import axios from 'axios'
 import { pokemonsContext } from "../../../context/pokemonsContext";
 import Alert from 'react-bootstrap/Alert';
 
-import specialAudio from '../../../styles/assets/missing0.mp3'
-import encounter from '../../../styles/assets/encounter.mp3'
-import ghost from '../../../styles/assets/ghost.mp3'
-import superPika from '../../../styles/assets/superpika.mp3'
-import pika from '../../../styles/assets/pika.mp3'
+import specialAudio from '../../../assets/audio/missing0.mp3'
+import encounter from '../../../assets/audio/encounter.mp3'
+import ghost from '../../../assets/audio/ghost.mp3'
+import superPika from '../../../assets/audio/superpika.mp3'
+import pika from '../../../assets/audio/pika.mp3'
 
 
 
@@ -106,7 +106,7 @@ const Search = () => {
   return <section className="search">
     <h1 className="title-get-all">Gotta catch 'em all!</h1>
     <div className="searcher-div">
-      <input type="text" placeholder="Search pokemons!" ref={inputRef} value={search} onChange={handleInput} />
+      <input className="search-input" type="text" placeholder="Search pokemons!" ref={inputRef} value={search} onChange={handleInput} />
       {notFound ? <Alert variant='dark'>
         That Pokemon doesn´t exist!
       </Alert> : null}
