@@ -19,7 +19,7 @@ const Footer = () => {
         setWantMusic(false);
       });
     }
-    return () => {
+    return () => { // This return cleans previous effects
       if (song) {
         song.removeEventListener('ended', () => {
           setWantMusic(false);
@@ -83,7 +83,7 @@ const Footer = () => {
           <img src="/assets/poke-flute.png" alt="" />
         </Button>
     }
-    <h4><a href="https://github.com/Francsy">Created by Francsy</a></h4>
+    <h4><a href="https://github.com/Francsy"><img src='/assets/github.png' alt="Git-hub"/>&nbsp;Created by Francsy</a></h4>
     <img className="footer-img" src="/assets/footer-pokemon.png" alt="" />
   </footer>
 };

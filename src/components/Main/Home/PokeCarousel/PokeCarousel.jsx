@@ -11,7 +11,7 @@ const PokeCarousel = (props) => {
   const printPokemons = () => props.pokemons.map(pokemon =>
     <Carousel.Item className="poke-carousel-item" indicators={false} interval={5000} key={uuidv4()}>
       <img
-        className="d-block w-100 carousel-image"
+        className="d-block mx-auto w-99 carousel-image"
         src={pokemon.image}
         alt=""
       />
