@@ -23,15 +23,13 @@ const PokeCarousel = (props) => {
 
         <Button className="left-button" size="lg" variant="dark"><strong>DETAILS</strong></Button>
         </Link>
-        <Button className="pokeball-button right-button" size="lg" onClick={() => props.delete(pokemon)} variant="dark" ><img className="open-pokeball-img right-button" src="/assets/open-pokeball.png" alt="" /></Button>
+        <Button className="pokeball-button right-button" size="lg" onClick={() => props.delete(pokemon)} variant="dark" ><img className="open-pokeball-img right-button" src="/assets/open-pokeball.webp" alt="" /></Button>
         </div>
       </div>
       
     </Carousel.Item>
 
   )
-
-  // <Card pokemon={pokemon} add={() => props.add(pokemon)} delete={() => props.delete(pokemon)} search={props.search} key={uuidv4()} />)
 
   return <Carousel className="poke-carousel" variant="dark">
       {printPokemons()}

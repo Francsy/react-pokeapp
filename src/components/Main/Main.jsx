@@ -14,7 +14,7 @@ const Main = () => {
 
   return (
     <main className="main">
-      <Suspense fallback={<div><img className="poke-loader" src="/assets/loading.gif" alt="Loading..." /></div>}>
+      <Suspense fallback={<div><img className="poke-loader" src="/assets/loading.webp" alt="Loading..." /></div>}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/new" element={<New />} />

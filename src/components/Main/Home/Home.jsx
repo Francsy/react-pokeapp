@@ -24,7 +24,7 @@ const Home = () => {
   }, []);
 
   return <section className="home">
-    <img className="home-title-pokemon" src="/assets/pokemon-title-color.png" alt="" />
+    <img className="home-title-pokemon" src="/assets/pokemon-title-color.webp" alt="" />
     {pokemons.length > 0 ? 
     <PokeCarousel pokemons={pokemons} delete={deletePokemon} /> 
     : <><article className="home-start-article"><h3>You didn´t add any pokemon yet!!</h3><div>
