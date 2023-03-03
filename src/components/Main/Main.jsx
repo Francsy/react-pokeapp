@@ -1,12 +1,17 @@
-import React, { lazy, Suspense } from "react";
-import { Routes, Route } from 'react-router-dom'
+import React, { lazy, Suspense, useEffect } from "react";
+import { Routes, Route, useLocation } from 'react-router-dom';
 const Home = lazy(() => import('./Home'))
 const New = lazy(() => import('./New'))
 const Details = lazy(() => import('./Details'))
 const Search = lazy(() => import('./Search'))
 
-
 const Main = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <main className="main">
       <Suspense fallback={<div><img className="poke-loader" src="/assets/loading.gif" alt="Loading..." /></div>}>
@@ -19,9 +24,6 @@ const Main = () => {
       </Suspense>
     </main>
   )
-
-
 }
 
-export default Main;
-
+export default Main
