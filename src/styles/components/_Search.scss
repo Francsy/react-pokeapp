@@ -1,53 +1,79 @@
 @import '../utils/mixins.scss';
 
 .search {
-    
-    padding: 5%;
-     &>.title-get-all {
-            @include bg-title;
-            background-image: url('../../assets/get-them-all.png');
 
-        }
+    padding: 5%;
+
+    &>.title-get-all {
+        @include bg-title;
+        background-image: url('../../assets/get-them-all.webp');
+
+    }
+
     &>.searcher-div {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         padding: 30px 0px;
-        @media screen and (min-width: 1366px) {
-            
 
-        } 
-        &>.search-input {
-            margin: 20px 0px;
-            padding: 0.5rem;
-            border: 1px solid gray;
-            border-radius: 0.25rem;
-            font-size: 1.3rem;
-            @media screen and (min-width: 768px) and (max-width: 1000px) {
-                font-size: 1.4rem;
-                min-width: 40vw;
+        @media screen and (min-width: 1366px) {}
+
+        &>div {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            &>.search-input {
+                margin: 20px 0px;
+                padding: 0.5rem;
+                border: 1px solid gray;
+                border-radius: 0.25rem;
+                font-size: 1.3rem;
+
+                @media screen and (min-width: 768px) and (max-width: 1000px) {
+                    font-size: 1.4rem;
+                    min-width: 40vw;
+                }
+
+                @media screen and (min-width: 1000px) {
+                    font-size: 1.5rem;
+                    min-width: 30vw;
+                }
             }
-            @media screen and (min-width: 1000px) {
-                font-size: 1.5rem;
-                min-width: 30vw;
+
+            &>.mini-loading {
+                position: absolute;
+                margin-right: 10px;
+                right: 0;
+                width: auto;
+                height: 30px;
+                @media screen and (min-width: 768px) and (max-width: 1000px) {
+                    height: 35px;
+                }
+                @media screen and (min-width: 1000px) {
+                    height: 40px;
+                }
             }
         }
+
         &>.search-pokemons-transparent {
-        
+
             max-height: 150px;
             max-width: 95%;
-            bottom: 0; 
+            bottom: 0;
             margin: 200px 40px 40px 40px;
+
             @media screen and (min-width: 1366px) {
                 max-height: 200px;
                 margin-bottom: 0px;
-    
-            } 
-    
+
+            }
+
         }
-       
+
     }
 
-    
+
 }

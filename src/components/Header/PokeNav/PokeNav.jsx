@@ -15,7 +15,7 @@ const PokeNav = () => {
     <Navbar className="poke-nav" collapseOnSelect expand="lg" bg="dark" variant="dark" expanded={navExpanded}>
       <Container>
       <NavLink className="nav-link" to="/" onClick={handleClick}>
-        <Navbar.Brand><img src="/assets/minimal-pokeball.png"
+        <Navbar.Brand><img src="/assets/minimal-pokeball.webp"
               width="30"
               height="30"
               className="d-inline-block align-top"
@@ -30,7 +30,7 @@ const PokeNav = () => {
             <NavLink className="nav-link" to="/search" onClick={handleClick}>Get them all!</NavLink>
           </Nav>
           <Nav>
-          <NavLink className="nav-link" to="/" onClick={handleClick}><img src="/assets/pokemon-title-nav.png" width="140"
+          <NavLink className="nav-link" to="/" onClick={handleClick}><img src="/assets/pokemon-title-nav.webp" width="140"
               height="44"
               className="d-inline-block align-top"
               alt="Pokemon title logo" /></NavLink>

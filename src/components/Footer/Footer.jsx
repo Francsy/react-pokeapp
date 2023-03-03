@@ -65,26 +65,26 @@ const Footer = () => {
         <>
           {isOn ? (
             <Button variant="secondary" size='lg'  className="left-button" onClick={() => stopSong()}>
-                        <img src="/assets/stop.png" alt="" />
+                        <img src="/assets/stop.webp" alt="" />
 
             </Button>
           ) : (
             <Button variant="secondary" size='lg' className="left-button" onClick={() => playSong()}>
-                        <img src="/assets/poke-flute.png" alt="" />
+                        <img src="/assets/poke-flute.webp" alt="" />
 
             </Button>
           )}
           <Button variant="secondary" size='lg' className="right-button" onClick={() => resetSong()}>
-          <img src="/assets/reset.png" alt="" />
+          <img src="/assets/reset.webp" alt="" />
           </Button>
         </>
       ) :
       <Button variant="secondary" size='lg' onClick={() => handleMusic()}>
-          <img src="/assets/poke-flute.png" alt="" />
+          <img src="/assets/poke-flute.webp" alt="" />
         </Button>
     }
-    <h4><a href="https://github.com/Francsy"><img src='/assets/github.png' alt="Git-hub"/>&nbsp;Created by Francsy</a></h4>
-    <img className="footer-img" src="/assets/footer-pokemon.png" alt="" />
+    <h4><a href="https://github.com/Francsy"><img src='/assets/github.webp' alt="Git-hub"/>&nbsp;Created by Francsy</a></h4>
+    <img className="footer-img" src="/assets/footer-pokemon.webp" alt="" />
   </footer>
 };
 
