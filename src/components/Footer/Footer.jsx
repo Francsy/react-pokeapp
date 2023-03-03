@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import pokemonTheme from '../../styles/assets/poke-lofi.mp3'
 import Button from 'react-bootstrap/Button';
 
+import pokemonTheme from '../../assets/audio/poke-lofi.mp3'
 
 
 const Footer = () => {

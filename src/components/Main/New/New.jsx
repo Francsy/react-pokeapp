@@ -64,7 +64,7 @@ const New = () => {
             <input type="url" placeholder="Image url*" {...register("image", { required: true })} className={errors.image ? "error-input" : ""} />
             {errors.typeOne && <span className="error-message">First type is required:</span>}
             <select {...register("typeOne", { required: true })} className={errors.typeOne ? "error-input" : ""} defaultValue="" >
-              <option value="" disabled>First Type</option>
+              <option value="" disabled>First Type*</option>
               <option value="normal">Normal</option>
               <option value="fighting">Fighting</option>
               <option value="flying">Flying</option>

@@ -5,7 +5,7 @@
     padding: 5%;
      &>.title-get-all {
             @include bg-title;
-            background-image: url('../assets/get-them-all.png');
+            background-image: url('../../assets/get-them-all.png');
 
         }
     &>.searcher-div {
@@ -18,12 +18,20 @@
             
 
         } 
-        &>input {
+        &>.search-input {
             margin: 20px 0px;
             padding: 0.5rem;
             border: 1px solid gray;
             border-radius: 0.25rem;
-            font-size: 1rem;
+            font-size: 1.3rem;
+            @media screen and (min-width: 768px) and (max-width: 1000px) {
+                font-size: 1.4rem;
+                min-width: 40vw;
+            }
+            @media screen and (min-width: 1000px) {
+                font-size: 1.6rem;
+                min-width: 30vw;
+            }
         }
         &>.search-pokemons-transparent {
         
