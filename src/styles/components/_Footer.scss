@@ -21,8 +21,8 @@ footer {
         min-height: 70px;
 
         & img {
-            max-height: 40px;
-            width: auto;
+            height: 40px;
+            width: 47px;
         }
         @media screen and (min-width: 768px) and (max-width: 1000px) {
             min-width: 15vw;
@@ -32,7 +32,8 @@ footer {
             min-width: 8vw;
             min-height: 40px;
             & img {
-                max-height: 35px;
+                height: 35px;
+                width: 42px
             }
         }
 
