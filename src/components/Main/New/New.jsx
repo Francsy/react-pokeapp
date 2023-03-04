@@ -30,8 +30,8 @@ const New = () => {
       typeTwo: data.typeTwo !== '' ? data.typeTwo : 'Not second type',
       abilities: ['Not available'],
       moves: ['Not available'],
-      smallImages: ['/assets/small-pokemon.png'],
-      bigImages: ['/assets/secret-pokemon.png'],
+      smallImages: ['/assets/small-pokemon.webp'],
+      bigImages: ['/assets/secret-pokemon.webp'],
       weight: 'Not available'
     }
     if (!pokemons.some(pokemon => pokemon.name === newPokemon.name || pokemon.id === newPokemon.id)) {
@@ -45,11 +45,11 @@ const New = () => {
   return (
     <section className="new">
       {success ? <article>
-        <img className="pokemon-created-img" src="/assets/pokemon-created.gif" alt="Pokemon created" />
+        <img className="pokemon-created-img" src="/assets/pokemon-created.webp" alt="Pokemon created" />
         <Alert variant='dark'>
           You added a new Pokemon!
         </Alert>
-        <img className="professor-oak-img" src="/assets/oak-transparent.png" alt="" />
+        <img className="professor-oak-img" src="/assets/oak-transparent.webp" alt="" />
       </article>
         :
         <>
@@ -110,7 +110,7 @@ const New = () => {
               <Alert variant='dark'>
                 Your new Pokemon is already on the list!
               </Alert> : <></>}
-            <img className="professor-oak-img" src="/assets/oak-transparent.png" alt="" />
+            <img className="professor-oak-img" src="/assets/oak-transparent.webp" alt="" />
           </form>
         </>}
     </section>

@@ -5,13 +5,10 @@ const PokeCard =  lazy(() => import('./PokeCard'))
 
 const List = (props) => {
 
-  const printPokemons = () => props.pokemons.map(pokemon =>  <Suspense fallback={<div><img src="/assets/loading.gif" alt="Loading..." /></div>}><PokeCard pokemon={pokemon} add={() => props.add(pokemon)} delete={() => props.delete(pokemon)} key={uuidv4()} /> </Suspense>)
+  const printPokemons = () => props.pokemons.map(pokemon =>  <Suspense fallback={<div><img src="/assets/loading.webp" alt="Loading..." /></div>} key={uuidv4()}><PokeCard pokemon={pokemon} add={() => props.add(pokemon)} delete={() => props.delete(pokemon)} key={uuidv4()} /></Suspense>)
 
-  return <div>
-         
+  return <div className="poke-list">
     {printPokemons()}
-        
-         
   </div>;
 
 };

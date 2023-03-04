@@ -26,8 +26,8 @@ const PokeCard = (props) => {
             <Button className="left-button" variant="dark" size="lg">DETAILS</Button>
           </Link>
           {isAdded ?
-            <Button className='pokeball-button right-button' onClick={props.delete} variant="dark" size="lg"><img className="close-pokeball-img" src="/assets/close-pokeball.png" alt="" /></Button>
-            : <Button className="pokeball-button right-button" onClick={props.add} variant="dark" size="lg"><img className="open-pokeball-img right-button" src="/assets/open-pokeball.png" alt="" variant="dark" /></Button>}
+            <Button className='pokeball-button right-button' onClick={props.delete} variant="dark" size="lg"><img className="close-pokeball-img" src="/assets/close-pokeball.webp" alt="" /></Button>
+            : <Button className="pokeball-button right-button" onClick={props.add} variant="dark" size="lg"><img className="open-pokeball-img right-button" src="/assets/open-pokeball.webp" alt="" variant="dark" /></Button>}
 
         </Card.Body>
       </Card>

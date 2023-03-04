@@ -40,7 +40,7 @@ const Search = () => {
             const newPokemon = {
               id: info.id.toString(),
               name: info.name,
-              image: info.sprites.other.dream_world.front_default || '/assets/small-pokemon.png',
+              image: info.sprites.other.dream_world.front_default || info.sprites.other['official-artwork'].front_default || '/assets/small-pokemon.webp',
               typeOne: info.types[0].type.name,
               typeTwo: info.types.length > 1 ? info.types[1].type.name : 'Not second type',
               abilities,
@@ -62,10 +62,10 @@ const Search = () => {
         }
       }
     }
-    const timer = setTimeout(getPokemon, 2500) // Otra opción: { debounce } from lodash (Library)
+    const timer = setTimeout(getPokemon, 1600) 
     notFoundTimer = setTimeout(() => setNotFound(false), 2000)
     return () => {
-      clearTimeout(timer); // el useEffect retorna una función que se ejecuta cuando el search se actualiza, con eesto limpiamos el temporizador anteriormente creadoo para que no siga activo
+      clearTimeout(timer); // 
       clearTimeout(notFoundTimer)
     }
   }, // eslint-disable-next-line 
@@ -106,12 +106,15 @@ const Search = () => {
   return <section className="search">
     <h1 className="title-get-all">Gotta catch 'em all!</h1>
     <div className="searcher-div">
+      <div className="input-div">
       <input className="search-input" type="text" placeholder="Search pokemons!" ref={inputRef} value={search} onChange={handleInput} />
+      {search ? <img className="mini-loading" src="/assets/mini-loading.webp" alt="loading"/> : <></>}
+      </div>
       {notFound ? <Alert variant='dark'>
         That Pokemon doesn´t exist!
       </Alert> : null}
       <List pokemons={searchList} add={addToMain} delete={deletePokemon} />
-      <img className="search-pokemons-transparent" src="/assets/pokemons-transparent.png" alt="Some pokemons together" />
+      <img className="search-pokemons-transparent" src="/assets/pokemons-transparent.webp" alt="Some pokemons together" />
     </div>
   </section>;
 };
