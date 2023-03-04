@@ -4,8 +4,18 @@
 .home {
     &> .home-title-pokemon {
         margin-top: 20px;
-        height: 20vh;
-        width: auto;
+        // height: 20vh;
+        height: 169.20px;
+        width: 300px;
+        @media screen and (min-width: 768px) and (max-width: 1000px) {
+            height: 253.80px;
+            width: 450px;
+        }
+
+        @media screen and (min-width: 1000px) {
+            height: 203.04px;
+            width: 360px;
+        }
     }
     &> .home-start-article{
         padding: 20px;
@@ -17,7 +27,6 @@
         border-radius: 10px;
         background: $poke-blue;
         box-shadow:  21px 21px 55px #5a5a5a, -21px -21px 55px #ffffff;
-        
         @media screen and (min-width: 768px) and (max-width: 1000px) {
             margin: 30px 20%;
         }

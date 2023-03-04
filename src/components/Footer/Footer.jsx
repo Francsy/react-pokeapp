@@ -59,7 +59,6 @@ const Footer = () => {
 
 
   return <footer>
-
     {
       wantMusic ? (
         <>
@@ -83,7 +82,7 @@ const Footer = () => {
           <img src="/assets/poke-flute.webp" alt="" />
         </Button>
     }
-    <h4><a href="https://github.com/Francsy"><img src='/assets/github.webp' alt="Git-hub"/>&nbsp;Created by Francsy</a></h4>
+    <h4><a href="https://github.com/Francsy" rel="noreferrer" target="_blank" ><img src='/assets/github.webp' alt="Git-hub"/>&nbsp;Created by Francsy</a></h4>
     <img className="footer-img" src="/assets/footer-pokemon.webp" alt="" />
   </footer>
 };
